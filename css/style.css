@@ -1,10 +1,11 @@
+# Create style.css with modern design and color scheme
+css_content = """
 :root {
-    --primary-color: #2C3E50;
-    --secondary-color: #3498DB;
-    --accent-color: #E74C3C;
-    --text-color: #333;
-    --light-bg: #f4f4f4;
-    --white: #ffffff;
+    --primary: #1a4b84;
+    --secondary: #2d7dd2;
+    --accent: #f45d48;
+    --light: #f5f7fa;
+    --dark: #2c3e50;
 }
 
 * {
@@ -16,13 +17,12 @@
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    color: var(--text-color);
+    color: var(--dark);
 }
 
 .navbar {
-    background: var(--white);
-    padding: 1rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: var(--primary);
+    padding: 1rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -42,31 +42,31 @@ body {
 }
 
 .nav-links li a {
-    color: var(--text-color);
+    color: white;
     text-decoration: none;
     padding: 0.5rem 1rem;
-    transition: color 0.3s ease;
+    transition: 0.3s;
 }
 
 .nav-links li a:hover {
-    color: var(--secondary-color);
+    color: var(--accent);
 }
 
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/trucks.jpg');
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/hero-bg.jpg');
     background-size: cover;
     background-position: center;
-    height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: var(--white);
-    margin-top: 70px;
+    color: white;
+    padding: 0 1rem;
 }
 
 .hero-content {
-    padding: 2rem;
+    max-width: 800px;
 }
 
 .hero h1 {
@@ -77,109 +77,48 @@ body {
 .cta-button {
     display: inline-block;
     padding: 1rem 2rem;
-    background: var(--accent-color);
-    color: var(--white);
+    background: var(--accent);
+    color: white;
     text-decoration: none;
     border-radius: 5px;
-    transition: background 0.3s ease;
+    transition: 0.3s;
+    margin-top: 1rem;
 }
 
 .cta-button:hover {
-    background: #c0392b;
+    background: #e04d3a;
+    transform: translateY(-2px);
 }
 
-.services-preview {
-    padding: 4rem 2rem;
-    background: var(--light-bg);
+.services-section {
+    padding: 5rem 5%;
+    background: var(--light);
 }
 
-.service-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    padding: 2rem 0;
-}
-
-.service-card {
-    background: var(--white);
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.service-card i {
-    font-size: 2.5rem;
-    color: var(--secondary-color);
-    margin-bottom: 1rem;
-}
-
-.cta-section {
-    background: var(--primary-color);
-    color: var(--white);
-    text-align: center;
-    padding: 4rem 2rem;
+.contact-section {
+    padding: 5rem 5%;
 }
 
 footer {
-    background: var(--primary-color);
-    color: var(--white);
-    padding: 3rem 2rem 1rem;
-}
-
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.footer-section h3 {
-    margin-bottom: 1rem;
-}
-
-.footer-section ul {
-    list-style: none;
-}
-
-.footer-section ul li {
-    margin-bottom: 0.5rem;
-}
-
-.footer-section a {
-    color: var(--white);
-    text-decoration: none;
-}
-
-.footer-bottom {
+    background: var(--primary);
+    color: white;
+    padding: 2rem 5%;
     text-align: center;
-    margin-top: 2rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
 }
 
 @media (max-width: 768px) {
-    .nav-toggle {
-        display: block;
-    }
-
     .nav-links {
         display: none;
-        width: 100%;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        background: var(--white);
-        flex-direction: column;
-        padding: 1rem;
     }
-
-    .nav-links.active {
-        display: flex;
-    }
-
+    
     .hero h1 {
         font-size: 2rem;
     }
 }
+"""
+
+# Write to style.css
+with open('css/style.css', 'w') as f:
+    f.write(css_content)
+
+print("Created style.css with modern design and color scheme")
