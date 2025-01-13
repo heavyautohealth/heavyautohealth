@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - Heavy Auto Health</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Pricing</h1>
+    </header>
+    
+    <main>
+        <section class="pricing-info">
+            <h2>Standard Pricing</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>OBD Tests</h3>
+                    <ul>
+                        <li><strong>Standard Price:</strong> $120 per test</li>
+                        <li><strong>Group Rate (4+ vehicles):</strong> $100 per test</li>
+                        <li><strong>Retest after failure:</strong> $50 per test</li>
+                    </ul>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Smoke Opacity Tests</h3>
+                    <ul>
+                        <li><strong>Standard Price:</strong> $150 per test</li>
+                        <li><strong>Group Rate (4+ vehicles):</strong> $130 per test</li>
+                        <li><strong>Retest after failure:</strong> $75 per test</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="discounts">
+                <h2>Available Discounts</h2>
+                <ul>
+                    <li>$20 off per test when testing 4 or more vehicles at the same location</li>
+                    <li>$20 off for successive tests of the same vehicle in the same year</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="calculator">
+            <h2>Price Calculator</h2>
+            <form id="price-calculator">
+                <div class="form-group">
+                    <label for="test-type">Test Type:</label>
+                    <select id="test-type" required>
+                        <option value="obd">OBD Test</option>
+                        <option value="smoke">Smoke Opacity Test</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="vehicle-count">Number of Vehicles:</label>
+                    <input type="number" id="vehicle-count" min="1" value="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="is-retest">Is this a retest?</label>
+                    <input type="checkbox" id="is-retest">
+                </div>
+
+                <div class="form-group">
+                    <label for="same-location">All vehicles at same location?</label>
+                    <input type="checkbox" id="same-location">
+                </div>
+
+                <button type="submit">Calculate Price</button>
+            </form>
+
+            <div id="price-result" class="hidden">
+                <h3>Estimated Total:</h3>
+                <p id="total-price"></p>
+                <p class="note">* Final price may vary based on specific circumstances</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Heavy Auto Health. All rights reserved.</p>
+    </footer>
+
+    <script src="../assets/js/pricing-calculator.js"></script>
+</body>
+</html>
